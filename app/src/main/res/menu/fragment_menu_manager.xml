@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/productManager"
+        android:title="Product"
+        android:icon="@drawable/icon_product"/>
+    <item android:id="@+id/orderManager"
+        android:title="Order"
+        android:icon="@drawable/icon_oder"/>
+    <item android:id="@+id/saleManager"
+        android:title="Sales"
+        android:icon="@drawable/sale_tag"/>
+    <item android:id="@+id/userManager"
+        android:title="User"
+        android:icon="@drawable/icon_person"/>
+</menu>
