@@ -54,10 +54,7 @@ public class MainActivity extends AppCompatActivity {
             getEventClick();
         }
     }
-
-    //test git
-    //test git 2
-
+    
     private void getEventClick() {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
