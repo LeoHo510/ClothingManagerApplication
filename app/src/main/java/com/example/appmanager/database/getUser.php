@@ -1,9 +1,7 @@
 <?php
     include "connect.php";
-    $status = $_POST["status"];
-
-    $query = "SELECT * FROM `user` WHERE `status` = $status";
-    $data = mysqli_query($conn,$query);
+    $query = "SELECT * FROM `user` Where NOT `status` = 1";
+    $data = mysqli_query($conn, $query);
     $result = array();
     while($row = mysqli_fetch_assoc($data)) {
         $result[] = ($row);
@@ -11,15 +9,15 @@
     if(!empty($result)) {
         $arr = [
             'success' => true,
-            'message' => "successful",
+            'message' => "success",
             'result' => $result
         ];
     } else {
         $arr = [
             'success' => false,
-            'message' => "failed"
+            'message' => "fail",
+            'result' => $result
         ];
     }
-
     print_r(json_encode($arr));
 ?>

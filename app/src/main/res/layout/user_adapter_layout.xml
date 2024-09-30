@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="7"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ho Gia Bao"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingLeft="10dp"/>
+            <TextView
+                android:id="@+id/txtUserGmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Giabao51003@gmail.com"
+                android:textSize="18sp"
+                android:paddingLeft="10dp"/>
+            <TextView
+                android:id="@+id/txtUserPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0829421631"
+                android:textSize="18sp"
+                android:paddingLeft="10dp"/>
+            <TextView
+                android:id="@+id/txtUserAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nghệ An"
+                android:textSize="18sp"
+                android:paddingLeft="10dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

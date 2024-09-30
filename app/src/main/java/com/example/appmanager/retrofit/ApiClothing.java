@@ -6,6 +6,7 @@ import com.example.appmanager.Model.ProductModel;
 import com.example.appmanager.Model.RevenueReportModel;
 import com.example.appmanager.Model.SalesModel;
 import com.example.appmanager.Model.SalesReportModel;
+import com.example.appmanager.Model.UserModel;
 
 import io.reactivex.rxjava3.core.Observable;
 import retrofit2.http.Field;
@@ -42,6 +43,9 @@ public interface ApiClothing {
 
     @GET("getsales.php")
     Observable<SalesModel> getSales();
+
+    @GET("getUser.php")
+    Observable<UserModel> getUser();
 
     @GET("salesreport.php")
     Observable<SalesReportModel> salesReport();
