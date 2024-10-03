@@ -10,7 +10,7 @@
 ## 🔧 Skills & Technologies
 
 - **Programming Languages**: Java, PHP
-- **Frameworks & Libraries**: Android SDK, Retrofit, Glide, Firebase, Material Design Components, Lottie,...
+- **Frameworks & Libraries**: Android SDK, Retrofit, Glide, Firebase, Material Design Components, Lottie, MPAndroidChart,...
 - **Databases**: MySQL, SQLite
 - **Tools & Platforms**: Git, GitHub, Android Studio, VS Code
 
@@ -24,7 +24,8 @@
 ## 📫 How to Reach Me
 
 - **Email**: Giabao51003@gmail.com
-- **LinkedIn**: ....
+- **LinkedIn**: https://www.linkedin.com/in/b%E1%BA%A3o-h%E1%BB%93-3bb382265/
 - **GitHub**: https://github.com/GiaBaoCute2108
+- **Facebook**: https://web.facebook.com/profile.php?id=100038695068302
 
 Let's connect and collaborate on exciting projects! 🚀
