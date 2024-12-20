@@ -17,6 +17,12 @@
         android:theme="@style/Theme.AppManager"
         tools:targetApi="31">
         <activity
+            android:name=".activity.UpdateSaleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.UpdateProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.StatisticsActivity"
             android:exported="false" />
         <activity

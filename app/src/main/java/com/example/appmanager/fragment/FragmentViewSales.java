@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.appmanager.Interface.SaleActionListener;
 import com.example.appmanager.Model.Sales;
 import com.example.appmanager.R;
 import com.example.appmanager.adapter.SalesAdapter;
@@ -52,6 +53,12 @@ public class FragmentViewSales extends Fragment {
         adapter = new SalesAdapter(getContext(), list);
         recyclerView.setAdapter(adapter);
         updateData();
+        adapter.setSaleActionListener(new SaleActionListener() {
+            @Override
+            public void onDeleteSale() {
+                updateData();
+            }
+        });
 
     }
 
@@ -71,5 +78,11 @@ public class FragmentViewSales extends Fragment {
 
                         }
                 ));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateData();
     }
 }

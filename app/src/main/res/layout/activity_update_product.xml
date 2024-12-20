@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,7 +21,7 @@
             app:boxStrokeColor="@color/black"
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtNameProduct"
+                android:id="@+id/txtNameUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Name"
@@ -36,7 +37,7 @@
             app:boxStrokeColor="@color/black"
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtUrlImage"
+                android:id="@+id/txtUrlImageUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Url Image"
@@ -52,7 +53,7 @@
             app:boxStrokeColor="@color/black"
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtPrice"
+                android:id="@+id/txtPriceUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Price"
@@ -68,7 +69,7 @@
             app:boxStrokeColor="@color/black"
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtInfo"
+                android:id="@+id/txtInfoUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Info"
@@ -84,7 +85,7 @@
             app:boxStrokeColor="@color/black"
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtInventory"
+                android:id="@+id/txtInventoryUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Inventory Quantity"
@@ -100,7 +101,7 @@
             app:boxStrokeColor="@color/black"
             android:textColorHint="@color/black">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtCategory"
+                android:id="@+id/txtCategoryUpdate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Category"
@@ -108,10 +109,10 @@
                 android:textSize="17sp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnAdd"
+            android:id="@+id/btnUpdate"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Add"
+            android:text="Update"
             android:layout_gravity="center"
             android:background="@drawable/background_item_button"/>
     </LinearLayout>

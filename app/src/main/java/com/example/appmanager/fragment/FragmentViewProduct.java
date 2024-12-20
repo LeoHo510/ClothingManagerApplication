@@ -1,5 +1,9 @@
 package com.example.appmanager.fragment;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +12,14 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.appmanager.Interface.ProductActionListener;
 import com.example.appmanager.Model.Product;
 import com.example.appmanager.R;
+import com.example.appmanager.activity.UpdateProductActivity;
 import com.example.appmanager.adapter.ProductAdapter;
 import com.example.appmanager.retrofit.ApiClothing;
 import com.example.appmanager.retrofit.RetrofitClient;
@@ -31,6 +38,7 @@ public class FragmentViewProduct extends Fragment {
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     ApiClothing apiClothing;
     List<Product> list;
+    UpdateProductActivity activity = new UpdateProductActivity();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -43,7 +51,6 @@ public class FragmentViewProduct extends Fragment {
         initView(view);
         getData();
     }
-
     private void getData() {
         compositeDisposable.add(apiClothing.getProduct(1)
                 .subscribeOn(Schedulers.io())
@@ -63,7 +70,6 @@ public class FragmentViewProduct extends Fragment {
                         }
                 ));
     }
-
     private void initView(View view) {
         apiClothing = RetrofitClient.getInstance(Utils.BASE_URL).create(ApiClothing.class);
         list = new ArrayList<>();
@@ -73,5 +79,17 @@ public class FragmentViewProduct extends Fragment {
         recyclerView.setHasFixedSize(true);
         adapter = new ProductAdapter(getContext(), list);
         recyclerView.setAdapter(adapter);
+        adapter.setProductActionListener(new ProductActionListener() {
+            @Override
+            public void onProductDeleted() {
+                getData();
+            }
+        });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getData();
     }
 }

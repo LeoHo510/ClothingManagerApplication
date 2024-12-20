@@ -2,6 +2,7 @@ package com.example.appmanager.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -89,7 +90,14 @@ public class FragmentAddProduct extends Fragment {
                                             }
                                         },
                                         throwable -> {
-
+                                            Log.d("Error", throwable.getMessage());
+                                            MotionToast.Companion.createToast((Activity) getContext(),
+                                                    "Notice",
+                                                    throwable.getMessage(),
+                                                    MotionToastStyle.ERROR,
+                                                    MotionToast.GRAVITY_BOTTOM,
+                                                    MotionToast.SHORT_DURATION,
+                                                    ResourcesCompat.getFont(getContext(), R.font.helvetica_regular));
                                         }
                                 ));
                     }

@@ -3,6 +3,7 @@ package com.example.appmanager.retrofit;
 import com.example.appmanager.Model.CateModel;
 import com.example.appmanager.Model.OrderModel;
 import com.example.appmanager.Model.ProductModel;
+import com.example.appmanager.Model.ResultModel;
 import com.example.appmanager.Model.RevenueReportModel;
 import com.example.appmanager.Model.SalesModel;
 import com.example.appmanager.Model.SalesReportModel;
@@ -26,7 +27,7 @@ public interface ApiClothing {
 
     @POST("addproduct.php")
     @FormUrlEncoded
-    Observable<ProductModel> addProduct(
+    Observable<ResultModel> addProduct(
             @Field("name") String name,
             @Field("url_img") String url_img,
             @Field("price") String price,
@@ -52,4 +53,43 @@ public interface ApiClothing {
 
     @GET("revenuereport.php")
     Observable<RevenueReportModel> revenueReport();
+
+    @FormUrlEncoded
+    @POST("deleteproduct.php")
+    Observable<ResultModel> deleteProduct(
+            @Field("id") int id
+    );
+
+    @POST("updateproduct.php")
+    @FormUrlEncoded
+    Observable<ResultModel> updateProduct(
+            @Field("id") int id,
+            @Field("name") String name,
+            @Field("url_img") String url_img,
+            @Field("price") String price,
+            @Field("info") String info,
+            @Field("inventory_quantity") int inventory_quantity,
+            @Field("category") String category
+    );
+
+    @FormUrlEncoded
+    @POST("deletesale.php")
+    Observable<ResultModel> deleteSale(
+            @Field("id") int id
+    );
+
+    @POST("addsale.php")
+    @FormUrlEncoded
+    Observable<ResultModel> addsale(
+            @Field("url") String url,
+            @Field("info") String info
+    );
+
+    @POST("updateSale.php")
+    @FormUrlEncoded
+    Observable<ResultModel> updateSale(
+            @Field("id") int id,
+            @Field("url") String url,
+            @Field("info") String info
+    );
 }
