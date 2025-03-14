@@ -1,6 +1,7 @@
 package com.example.appmanager.retrofit;
 
 import com.example.appmanager.Model.CateModel;
+import com.example.appmanager.Model.MessageModel;
 import com.example.appmanager.Model.OrderModel;
 import com.example.appmanager.Model.ProductModel;
 import com.example.appmanager.Model.ResultModel;
@@ -36,10 +37,29 @@ public interface ApiClothing {
             @Field("category") String category
     );
 
+    @POST("signup.php")
+    @FormUrlEncoded
+    Observable<UserModel> signUp(
+            @Field("firstname") String firstname,
+            @Field("lastname") String lastname,
+            @Field("address") String address,
+            @Field("phonenumber") String phonenumber,
+            @Field("email") String email,
+            @Field("password") String password,
+            @Field("uid") String uid
+    );
+
     @POST("getorder.php")
     @FormUrlEncoded
     Observable<OrderModel> getOrder(
             @Field("iduser") int iduser
+    );
+
+    @POST("updateStatusOrder.php")
+    @FormUrlEncoded
+    Observable<MessageModel> updateStatusOrder(
+            @Field("id") int id,
+            @Field("status") String status
     );
 
     @GET("getsales.php")
@@ -60,6 +80,20 @@ public interface ApiClothing {
             @Field("id") int id
     );
 
+    @POST("gettoken.php")
+    @FormUrlEncoded
+    Observable<UserModel> getToken(
+            @Field("status") int status,
+            @Field("iduser") int iduser
+    );
+
+    @POST("signin.php")
+    @FormUrlEncoded
+    Observable<UserModel> signIn(
+            @Field("email") String email,
+            @Field("password") String password
+    );
+
     @POST("updateproduct.php")
     @FormUrlEncoded
     Observable<ResultModel> updateProduct(
@@ -70,6 +104,14 @@ public interface ApiClothing {
             @Field("info") String info,
             @Field("inventory_quantity") int inventory_quantity,
             @Field("category") String category
+    );
+
+    @POST("send_email.php")
+    @FormUrlEncoded
+    Observable<MessageModel> send_email_order_status(
+            @Field("email") String email,
+            @Field("subject") String subject,
+            @Field("message") String message
     );
 
     @FormUrlEncoded
@@ -91,5 +133,26 @@ public interface ApiClothing {
             @Field("id") int id,
             @Field("url") String url,
             @Field("info") String info
+    );
+
+    @POST("updatetoken.php")
+    @FormUrlEncoded
+    Observable<MessageModel> updateToken(
+            @Field("iduser") int iduser,
+            @Field("token") String token
+    );
+
+    @POST("updatepass.php")
+    @FormUrlEncoded
+    Observable<MessageModel> updatePass(
+            @Field("email") String email,
+            @Field("password") String password
+    );
+
+    @POST("checkrule.php")
+    @FormUrlEncoded
+    Observable<MessageModel> checkRule(
+            @Field("email") String email,
+            @Field("password") String password
     );
 }

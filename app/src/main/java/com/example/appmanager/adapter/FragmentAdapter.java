@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import com.example.appmanager.fragment.FragmentOrder;
 import com.example.appmanager.fragment.FragmentProduct;
 import com.example.appmanager.fragment.FragmentSales;
+import com.example.appmanager.fragment.FragmentStatistics;
 import com.example.appmanager.fragment.FragmentUser;
 
 public class FragmentAdapter extends FragmentStatePagerAdapter {
@@ -23,12 +24,13 @@ public class FragmentAdapter extends FragmentStatePagerAdapter {
             case 1: return new FragmentOrder();
             case 2: return new FragmentSales();
             case 3: return new FragmentUser();
+            case 4: return new FragmentStatistics();
             default: return new FragmentProduct();
         }
     }
 
     @Override
     public int getCount() {
-        return 4;
+        return 5;
     }
 }

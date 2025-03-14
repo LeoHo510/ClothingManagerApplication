@@ -12,4 +12,7 @@
     <item android:id="@+id/userManager"
         android:title="User"
         android:icon="@drawable/icon_person"/>
+    <item android:id="@+id/statistics"
+        android:title="Statistics"
+        android:icon="@drawable/chart_simple_solid"/>
 </menu>

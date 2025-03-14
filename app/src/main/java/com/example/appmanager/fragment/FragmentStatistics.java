@@ -1,30 +1,39 @@
-package com.example.appmanager.activity;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
+package com.example.appmanager.fragment;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.appmanager.R;
 import com.example.appmanager.adapter.StatisticsFragmentAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class StatisticsActivity extends AppCompatActivity {
+public class FragmentStatistics extends Fragment {
     BottomNavigationView bottomNavigationView;
     ViewPager viewPager;
     StatisticsFragmentAdapter adapter;
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_statistics);
-        initView();
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_statistics_layout, container, false);
     }
 
-    private void initView() {
-        bottomNavigationView = findViewById(R.id.reportNavi);
-        viewPager = findViewById(R.id.reportViewPager);
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initView(view);
+    }
+
+    private void initView(View view) {
+        bottomNavigationView = view.findViewById(R.id.reportNavi);
+        viewPager = view.findViewById(R.id.reportViewPager);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -46,9 +55,9 @@ public class StatisticsActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 switch (position) {
                     case 0: bottomNavigationView.getMenu().findItem(R.id.sales_report);
-                            break;
+                        break;
                     case 1: bottomNavigationView.getMenu().findItem(R.id.sales_revenue_report);
-                            break;
+                        break;
                 }
             }
 
@@ -57,7 +66,7 @@ public class StatisticsActivity extends AppCompatActivity {
 
             }
         });
-        adapter = new StatisticsFragmentAdapter(getSupportFragmentManager(), 2);
+        adapter = new StatisticsFragmentAdapter(getChildFragmentManager(), 2);
         viewPager.setAdapter(adapter);
     }
 }

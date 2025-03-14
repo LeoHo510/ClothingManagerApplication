@@ -17,26 +17,36 @@
         android:theme="@style/Theme.AppManager"
         tools:targetApi="31">
         <activity
-            android:name=".activity.UpdateSaleActivity"
+            android:name=".activity.SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.UpdateProductActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.StatisticsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.UpdateActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activity.MainActivity"
-            android:exported="true">
+            android:name=".activity.StartActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.StartActivity2"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".activity.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SignInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.UpdateSaleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.UpdateProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -2,16 +2,14 @@ package com.example.appmanager.Model;
 
 public class User {
     int iduser;
-    String password, firstname, lastname, address, phonenumber, email;
+    String password, firstname, lastname, address, phonenumber, email, token;
 
-    public User(int iduser, String password, String firstname, String lastname, String address, String phonenumber, String email) {
-        this.iduser = iduser;
-        this.password = password;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.address = address;
-        this.phonenumber = phonenumber;
-        this.email = email;
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public String getPassword() {

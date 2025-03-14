@@ -1,11 +1,12 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidApplication)
+    alias(libs.plugins.googleGmsGoogleServices)
 }
 
 android {
     namespace = "com.example.appmanager"
-    compileSdk = 34
+    compileSdk = 35
 
     packagingOptions {
         exclude("META-INF/DEPENDENCIES")
@@ -42,6 +43,10 @@ dependencies {
     implementation(libs.material)
     implementation(libs.constraintlayout)
     implementation(libs.androidx.activity)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
+    implementation(libs.firebase.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -76,7 +81,10 @@ dependencies {
     implementation ("com.airbnb.android:lottie:6.4.0")
 
     //firebase
-    implementation("com.google.firebase:firebase-auth:23.0.0")
+    implementation ("com.google.firebase:firebase-auth:23.2.0")
+    implementation ("androidx.credentials:credentials:1.5.0-rc01")
+    implementation ("androidx.credentials:credentials-play-services-auth:1.3.0")
+    implementation ("com.google.android.libraries.identity.googleid:googleid:1.1.1")
 
     //firebase cloud messagging
     implementation("com.google.firebase:firebase-messaging:24.0.0")
@@ -88,4 +96,10 @@ dependencies {
 
     //MPAndroidChart
     implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
+    //ImageSlider
+    implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }
+
+apply(plugin = "com.google.gms.google-services")

@@ -3,10 +3,18 @@ package com.example.appmanager.Model;
 import java.util.List;
 
 public class Order {
-    String firstname, lastname, address, phonenumber, email, totalprice;
+    String firstname, lastname, address, phonenumber, email, totalprice, status;
     int id, iduser, quantity;
     String date;
     List<Product> items;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public List<Product> getList() {
         return items;
